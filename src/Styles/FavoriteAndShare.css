@@ -1,0 +1,15 @@
+.FavShare_father {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.FavShare_content {
+  background-color: white;
+  border: none;
+  padding: 1em;
+}
+
+.buttonLike {
+  height: 58.19px;
+}

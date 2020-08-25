@@ -1,0 +1,38 @@
+.recipe-container {
+  border-radius: 10px;
+  box-shadow: 0 5px 5px gray;
+  display: inline-grid;
+  margin: 2vh;
+  text-decoration: none;
+  width: 40%;
+}
+
+.recipe-image {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.CatName-Wrapper {
+  display: grid;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.recipe-category {
+  color: lightslategrey;
+  font-size: 1em;
+}
+
+.recipe-name {
+  color: black;
+  font-size: 1em;
+}
+
+.Recipes_all {
+  padding: 10em 0 6em;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+}

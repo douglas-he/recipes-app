@@ -1,0 +1,22 @@
+.To_Carousel {
+  height: 10em;
+  width: 10em;
+}
+
+.recommended {
+  text-align: center;
+}
+
+.containStart {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.fixedButton {
+  bottom: 15px;
+  height: 5%;
+  position: fixed;
+  width: 80%;
+}
