@@ -50,7 +50,7 @@ const renderDebounce = (searchCriteria, inputChange, input) => (
   </div>
 );
 const arrayPName = ['/explorar', '/explorar/comidas', '/explorar/bebidas', '/explorar/bebidas/ingredientes', '/explorar/comidas/ingredientes'];
-export default function Header() {
+export default function Header () {
   const [searchCriteria, setSearchCriteria] = useState('');
   const [input, setInput] = useState('');
   const { defineSearch, visibleSearch, setRequestInitialPage, pageName,
@@ -72,9 +72,9 @@ export default function Header() {
       <div className="Header_Search">
         {pageName === 'Explorar Origem' && window.location.href.includes('comidas')
           ? <DropdownOrigem />
-          : !window.location.pathname.match(/explorar/) && <CategoryBar />
+          : !window.location.href.match(/explorar/) && <CategoryBar />
         }
-        {(visibleSearch && !arrayPName.includes(window.location.pathname)) && (
+        {(visibleSearch && !arrayPName.includes(window.location.href.split('#')[1])) && (
           <div> {renderDebounce(searchCriteria, inputChange, input)}
 
             <div className="Recipes_radio">{renderRadio(radioChange)}</div>

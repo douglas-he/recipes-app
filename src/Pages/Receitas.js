@@ -41,7 +41,7 @@ const redirectWindow = (array, setFoodDetail, foodDetail) => {
   const recipe = array.idDrink || array.idMeal;
   if (foodDetail !== recipe) setFoodDetail(recipe);
   return (
-    <Redirect to={`/receitas${window.location.pathname.includes('comidas') ? '/comidas' : '/bebidas'}/${recipe}`} />
+    <Redirect to={`/receitas${window.location.href.includes('comidas') ? '/comidas' : '/bebidas'}/${recipe}`} />
   );
 };
 

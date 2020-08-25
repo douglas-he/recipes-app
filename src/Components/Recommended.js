@@ -31,8 +31,9 @@ const responsive = {
 
 const carouselRecommended = (requests, setFoodDetail, setRandomRequests, setIsRequesting) => {
   const type = requests[0].idMeal ? 'Meal' : 'Drink';
-  const toDetailsPage = window.location.pathname.includes('comidas')
-    ? '/receitas/bebidas' : '/receitas/comidas';
+  const toDetailsPage = requests[0].idMeal
+    ? '/receitas/comidas' : '/receitas/bebidas';
+
   return (
     <Carousel
       infinite
@@ -49,13 +50,13 @@ const carouselRecommended = (requests, setFoodDetail, setRandomRequests, setIsRe
           })}
           to={`${toDetailsPage}/${food[`id${type}`]}`}
         > <div data-testid={`${index}-recomendation-card`}>
-          <img
-            className="To_Carousel"
-            src={food[`str${type}Thumb`]}
-            alt={food[`str${type}`]}
-          />
-          <p className="legend">{food[`str${type}`]}</p>
-        </div>
+            <img
+              className="To_Carousel"
+              src={food[`str${type}Thumb`]}
+              alt={food[`str${type}`]}
+            />
+            <p className="legend">{food[`str${type}`]}</p>
+          </div>
         </Link>
       ))}
     </Carousel>

@@ -8,7 +8,7 @@ export default function HeaderInput(setSearchCriteria, setInput) {
   const { setVisibleSearch, visibleSearch } = useContext(RecipesContext);
   return (
     <input
-      disabled={arrayPName.includes(window.location.pathname)}
+      disabled={arrayPName.includes(window.location.href.split('#')[1])}
       type="image"
       data-testid="search-top-btn"
       src={searchTopBtn}

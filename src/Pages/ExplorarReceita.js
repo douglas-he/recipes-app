@@ -9,11 +9,12 @@ const ExplorarReceita = () => {
     setIdDetail, setStopFetching, setVisibleSearch,
   } = useContext(RecipesContext);
   useEffect(() => () => { setIdDetail(''); }, []);
+  console.log(window.location.href)
   return (
     <div><Header /><div className="containExplore">
-      <Link className="exploreLinks" to={`${window.location.pathname}/ingredientes`}>
+      <Link className="exploreLinks" to={`${window.location.href.includes('comidas')?'comidas':'bebidas'}/ingredientes`}>
         <button className="exploreButtons" onClick={() => setPageName('Explorar Ingredientes')} data-testid="explore-by-ingredient" type="button">Por Ingredientes</button></Link>
-      {window.location.pathname.includes('comidas') && <Link className="exploreLinks" to="/explorar/comidas/area">
+      {window.location.href.includes('comidas') && <Link className="exploreLinks" to="/explorar/comidas/area">
         <button
           className="exploreButtons"
           onClick={() => {
@@ -31,7 +32,7 @@ const ExplorarReceita = () => {
           onClick={requestRandom}
           type="button"
         >Me surpreenda!</button></div></div>
-      {(idDetail !== '') && <Redirect to={`/receitas/${window.location.pathname.split('/')[2]}/${idDetail}`} />}
+      {(idDetail !== '') && <Redirect to={`/receitas/${window.location.href.includes('comidas')?'comidas':'bebidas'}/${idDetail}`} />}
       <Footer /></div>
   );
 };

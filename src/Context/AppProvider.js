@@ -39,7 +39,7 @@ const categorySearch = (
 };
 
 export default function AppProvider({ children }) {
-  const local = window.location.pathname.split('/')[3];
+  const local = window.location.href.split('#')[1].split('/')[3];
   const [requestInitialPage, setRequestInitialPage] = useState([]);
   const [copy, setCopy] = useState([]);
   const [visibleSearch, setVisibleSearch] = useState(false);
