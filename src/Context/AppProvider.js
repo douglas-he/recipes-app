@@ -10,10 +10,10 @@ const conditionToToggle = (
   toggleOn,
   toggleOff,
 ) => (
-  buttonName === usedButton
-    ? toggleOn()
-    : toggleOff(paramRequest, buttonName)
-);
+    buttonName === usedButton
+      ? toggleOn()
+      : toggleOff(paramRequest, buttonName)
+  );
 
 const verifyRequest = (
   stopFetching, requestInitialPage, setIsFetching,
@@ -38,8 +38,8 @@ const categorySearch = (
   setNoResults(false);
 };
 
-export default function AppProvider({ children }) {
-  const local = window.location.href.split('#')[1].split('/')[3];
+export default function AppProvider ({ children }) {
+  const local = window.location.href.split('#')[1] ? window.location.href.split('#')[1].split('/')[3] : null;
   const [requestInitialPage, setRequestInitialPage] = useState([]);
   const [copy, setCopy] = useState([]);
   const [visibleSearch, setVisibleSearch] = useState(false);

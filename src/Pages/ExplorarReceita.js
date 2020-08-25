@@ -9,7 +9,7 @@ const ExplorarReceita = () => {
     setIdDetail, setStopFetching, setVisibleSearch,
   } = useContext(RecipesContext);
   useEffect(() => () => { setIdDetail(''); }, []);
-  console.log(window.location.href)
+
   return (
     <div><Header /><div className="containExplore">
       <Link className="exploreLinks" to={`${window.location.href.includes('comidas')?'comidas':'bebidas'}/ingredientes`}>
